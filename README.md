@@ -1,95 +1,77 @@
-# Market_Basket_Analysis
-Online Retail Data Analysis and Market Basket Analysis
-This notebook performs an exploratory data analysis and market basket analysis on the Online Retail II dataset. The dataset contains transactional data from a UK-based online retail store.
+# 🧺 Market Basket Analysis with Association Rules
 
-**Objectives:**
+[![View Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)](https://github.com/pa7003/Market_Basket_Analysis/blob/main/Market_Basket_Analysis.ipynb)
 
-> Load and clean the online retail dataset.
+This project explores consumer purchase behavior through **Market Basket Analysis (MBA)** using association rule mining techniques. By applying algorithms like **Apriori**, we uncover meaningful item combinations and insights that can drive product bundling, store layout optimization, and personalized marketing strategies.
 
-> Perform exploratory data analysis (EDA) to understand key trends and patterns, including:
+---
 
-> Top selling products
+## 📁 Repository Contents
 
-> Top customers by purchase volume
+- `Market_Basket_Analysis.ipynb`: The complete Jupyter Notebook with data processing, analysis, visualizations, and insights.
+- 💡 Embedded visualizations: Association networks, item frequency charts, Sankey diagrams, and more.
+- 📂 Data Source: Sample retail transaction dataset (imported from Kaggle or simulated basket data).
 
-> Monthly and hourly sales trends
+---
 
-> Sales by country
+## 📌 Key Features
 
-> Implement Sequential Pattern Mining (using PrefixSpan) to identify frequent sequences of purchases.
+### 🧹 1. Data Preprocessing & Transformation
+- Handling missing values and duplicates
+- Transactional format → Basket format transformation
+- Country-wise filtering (if applicable)
 
-> Implement Frequent Itemset Mining (using Apriori and FP-Growth) to find product combinations that frequently appear together in transactions.
+### 📊 2. Exploratory Data Analysis
+- Most frequently bought items
+- Basket size distribution
+- Temporal sales trends (if available)
 
-> Generate and analyze association rules from the frequent itemsets to identify product recommendations.
+### 🔍 3. Frequent Itemset Mining
+- **Apriori algorithm** to extract itemsets with high support
+- Parameters tuning: Support, Confidence, Lift
 
-> Visualize the results, including association rules as network graphs and heatmaps of itemset support.
+### 🔗 4. Association Rule Mining
+- Generation of rules based on:
+  - Support
+  - Confidence
+  - Lift
+  - Leverage
+- Visualization of association rules using:
+  - Network graphs
+  - Heatmaps
+  - Parallel coordinates
+  - Sankey diagrams
 
-**Dataset**:
+### 📈 5. Advanced Analysis (Extended in future work)
+- **Temporal Market Basket Analysis**
+- **Sequential Rule Mining (PrefixSpan / SPADE)**
+- **Personalization with Lift & Confidence**
+- **Product Recommendation Engine (Rule-based)**
 
-The dataset used is "Online Retail II" from Kaggle: https://www.kaggle.com/datasets/mashlyn/online-retail-ii-uci
+---
 
-**Notebook Structure**
+## 📦 Tech Stack
 
-The notebook is organized into the following sections:
+- **Language**: Python 3.11+
+- **Libraries**:
+  - `mlxtend` – Frequent Itemset & Rule Mining
+  - `pandas`, `numpy` – Data processing
+  - `matplotlib`, `seaborn`, `plotly` – Visualization
+  - `networkx`, `pyvis` – Rule network visualization
+- **Platform**: Jupyter Notebook
 
-**Kaggle Dataset Download in Colab:**
-Steps to download the dataset directly in Google Colab.
+---
 
-**Data Cleaning:**
-Handles missing values, removes invalid entries, and prepares the data for analysis.
-Exploratory Data Analysis: Visualizes various aspects of the sales data, such as top products, customers, and temporal trends.
-Temporal Analysis: Further explores monthly, weekly, hourly, and daily sales patterns using Plotly for interactive visualizations.
-Sequential Pattern Mining: Uses the PrefixSpan algorithm to find frequent sequences of purchased items.
-Create the Transaction Basket Format: Transforms the data into a format suitable for frequent itemset mining.
-Frequent Itemset Mining (Apriori & FP-Growth): Applies Apriori and FP-Growth algorithms to identify frequent itemsets.
-Association Rule Generation: Generates association rules (antecedent -> consequent) from the frequent itemsets.
-Visualization of Association Rules: Visualizes the association rules as network graphs and Sankey diagrams.
-Heatmaps of Itemsets: Visualizes the support of frequent itemsets using heatmaps.
-Plotly Dashboard (Attempted): An attempt to create a combined Plotly dashboard (note: combining Sankey and other plot types in make_subplots can be complex, separate figures are shown).
+## 🚀 How to Run
 
-**Export Results:** Exports the frequent itemsets, association rules, and key sales summaries to CSV files.
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/pa7003/Market_Basket_Analysis.git
+   cd Market_Basket_Analysis
+2. Open the notebook:
 
-**Getting Started**
-To run this notebook:
+   Use Jupyter Notebook locally, or
 
-Open the notebook in Google Colab.
-Follow the steps to download the dataset from Kaggle (requires a Kaggle account and API key).
-Run all the cells sequentially.
-Dependencies
-The notebook uses the following libraries:
+   Open directly in Google Colab
 
-pandas
-
-numpy
-
-matplotlib
-
-seaborn
-
-plotly
-
-mlxtend
-
-prefixspan
-
-networkx
-
-These dependencies will be installed automatically when you run the !pip install commands in the notebook.
-
-**Key Findings (Based on Notebook Output)**
-The dataset contains transactional data with details on invoices, products, quantities, dates, prices, customer IDs, and countries.
-Data cleaning involved handling missing Customer IDs and Descriptions, removing transactions with zero or negative quantities, and standardizing product descriptions.
-EDA revealed insights into top-selling products, high-value customers, and temporal sales patterns (e.g., peak sales hours/months).
-Sequential pattern mining identified frequent sequences of items purchased in the same invoice.
-Frequent itemset mining and association rule generation identified product combinations that are likely to be bought together (e.g., "strawberry ceramic trinket box" and "sweetheart ceramic trinket box" have a high lift). These rules can be used for product recommendations and store layout optimization.
-Visualizations like heatmaps help understand the co-occurrence of different products.
-
-**Future Work:**
-
-Further explore different minimum support and confidence thresholds for association rule mining.
-
-Implement clustering techniques to group customers based on their purchase history.
-
-Build a more comprehensive and interactive dashboard using Dash or other visualization libraries.
-
-Perform time series forecasting on the monthly sales data.
+3. Run all cells in Market_Basket_Analysis.ipynb
